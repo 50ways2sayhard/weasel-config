@@ -19,5 +19,5 @@ import_tables:
   - THUOCL_poem
   - sogou_new_words
   - zhwiki
-  - moegirl
+  # - moegirl
 

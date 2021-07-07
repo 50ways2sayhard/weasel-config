@@ -22,7 +22,7 @@ switches:
     reset: 0
     states: [ 简, 繁 ]
   - name: emoji_suggestion
-    reset: 1
+    reset: 0
     states: [ "🈚️️\uFE0E", "🈶️️\uFE0F" ]
   - name: symbol_support
     reset: 1
@@ -55,6 +55,7 @@ engine:
   translators:
     - punct_translator
     - script_translator
+    - table_translator@custom_phrase
   filters:
     - simplifier@emoji_suggestion
     - simplifier@symbol_support
@@ -237,4 +238,11 @@ ascii_composer:
     Caps_Lock: noop
     Eisu_toggle: clear
 
-
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_completion: false
+  enable_sentence: false
+  initial_quality: 1
+# "engine/translators/@5": table_translator@custom_phrase
